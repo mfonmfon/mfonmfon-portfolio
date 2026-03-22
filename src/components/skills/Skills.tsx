@@ -32,46 +32,46 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-black relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 bg-black relative overflow-hidden">
       {/* Subtle background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       
-      <div className="w-full px-6 lg:px-12 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+      <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Technical <span className="text-white">Expertise</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto px-4">
               Mastering modern technologies to build exceptional digital experiences
             </p>
           </div>
 
           {/* Skill Categories */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {skillCategories.map((category, categoryIndex) => (
               <div 
                 key={categoryIndex} 
-                className="bg-neutral-900 rounded-2xl p-8 shadow-lg border border-neutral-800 transition-all duration-300 hover:scale-[1.03] hover:border-neutral-700"
+                className="bg-neutral-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-neutral-800 transition-all duration-300 hover:scale-[1.03] hover:border-neutral-700"
               >
-                <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">
                   {category.title}
                 </h3>
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center shadow-inner">
+                        <div className="flex items-center space-x-2 sm:space-x-3">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-800 flex items-center justify-center shadow-inner">
                             <img 
                               src={skill.logo} 
                               alt={skill.name}
-                              className="w-6 h-6 object-contain"
+                              className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                             />
                           </div>
-                          <span className="font-medium text-white">{skill.name}</span>
+                          <span className="font-medium text-white text-sm sm:text-base">{skill.name}</span>
                         </div>
-                        <span className="text-sm text-gray-400 font-mono">{skill.level}%</span>
+                        <span className="text-xs sm:text-sm text-gray-400 font-mono">{skill.level}%</span>
                       </div>
                       <div className="w-full bg-neutral-800 rounded-full h-2">
                         <div
@@ -87,11 +87,11 @@ const Skills: React.FC = () => {
           </div>
 
           {/* Additional Technologies */}
-          <div className="mt-20">
-            <h3 className="text-2xl font-bold text-white text-center mb-10">
+          <div className="mt-12 sm:mt-16 lg:mt-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-white text-center mb-8 sm:mb-10">
               Additional <span className="text-white">Technologies</span>
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
                 { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
                 { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
@@ -102,14 +102,14 @@ const Skills: React.FC = () => {
               ].map((tech, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 px-6 py-3 bg-neutral-900 border border-neutral-800 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-3 bg-neutral-900 border border-neutral-800 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   <img 
                     src={tech.logo} 
                     alt={tech.name}
-                    className="w-5 h-5 object-contain"
+                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
                   />
-                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-medium">
+                  <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-medium text-sm sm:text-base">
                     {tech.name}
                   </span>
                 </div>
