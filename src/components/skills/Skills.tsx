@@ -48,34 +48,34 @@ const Skills: React.FC = () => {
           </div>
 
           {/* Skill Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-10">
             {skillCategories.map((category, categoryIndex) => (
               <div 
                 key={categoryIndex} 
-                className="bg-neutral-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-neutral-800 transition-all duration-300 hover:scale-[1.03] hover:border-neutral-700"
+                className="bg-neutral-900 rounded-xl sm:rounded-2xl p-3.5 sm:p-8 shadow-lg border border-neutral-800 transition-all duration-300 hover:border-neutral-700 flex flex-col justify-between"
               >
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center">
+                <h3 className="text-xs sm:text-2xl font-bold text-white mb-3 sm:mb-8 text-center border-b border-neutral-800 pb-2 sm:pb-0 sm:border-0">
                   {category.title}
                 </h3>
-                <div className="space-y-6 sm:space-y-8">
+                <div className="space-y-3 sm:space-y-8">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-2 sm:space-x-3">
-                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-800 flex items-center justify-center shadow-inner">
+                      <div className="flex items-center justify-between mb-1.5 sm:mb-3">
+                        <div className="flex items-center space-x-1.5 sm:space-x-3 truncate">
+                          <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-neutral-800 flex-shrink-0 flex items-center justify-center shadow-inner">
                             <img 
                               src={skill.logo} 
                               alt={skill.name}
-                              className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                              className="w-3.5 h-3.5 sm:w-6 sm:h-6 object-contain"
                             />
                           </div>
-                          <span className="font-medium text-white text-sm sm:text-base">{skill.name}</span>
+                          <span className="font-medium text-white text-[11px] sm:text-base truncate">{skill.name}</span>
                         </div>
-                        <span className="text-xs sm:text-sm text-gray-400 font-mono">{skill.level}%</span>
+                        <span className="text-[9px] sm:text-sm text-amber-400 font-mono flex-shrink-0 ml-1">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-neutral-800 rounded-full h-2">
+                      <div className="w-full bg-neutral-800 rounded-full h-1.5 sm:h-2">
                         <div
-                          className="h-2 rounded-full bg-white transition-all duration-700 ease-out"
+                          className="h-1.5 sm:h-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-300 transition-all duration-700 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>

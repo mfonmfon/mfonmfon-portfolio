@@ -20,6 +20,60 @@ const Experience: React.FC = () => {
       type: "Full-time"
     },
     {
+      position: "Software Engineer (Frontend & Backend)",
+      company: "Alumoni360",
+      location: "Remote",
+      period: "2026",
+      description:
+        "Built the frontend and backend for Alumoni360 — the digital infrastructure platform for the global critical minerals economy. A unified system where compliance, provenance, workforce intelligence, and ESG reporting converge to create transparent, audit-ready supply chains for governments, mining operators, manufacturers, and investors.",
+      achievements: [
+        "Developed the compliance and provenance tracking modules, converting fragmented operational data into a single source of verified, audit-ready truth across global mineral supply chains",
+        "Built Staffline by Alumoni360 — a workforce intelligence feature connecting verified local professionals with expatriate specialists across the critical minerals ecosystem, covering recruitment, credential verification, and deployment",
+        "Engineered ESG and sustainability reporting dashboards that transform complex field and operational data into investor-grade intelligence for regulators, financiers, and global buyers",
+        "Implemented the business onboarding and supplier risk management flows, enabling organisations to continuously validate compliance across operations and remain audit-ready for international supply chains",
+        "Built scalable backend services powering real-time data ingestion, validation, and structured reporting across the full mine-to-market value chain"
+      ],
+      technologies: ["React", "TypeScript", "Node.js", "REST API", "PostgreSQL", "Docker", "ESG Reporting", "Blockchain", "Tailwind CSS"],
+      type: "Full-time"
+    },
+    {
+      position: "Technical Lead & Full-Stack Engineer",
+      company: "Advance",
+      location: "Remote",
+      period: "2026 - Present",
+      description:
+        "Led the end-to-end technical development of Advance — an automated digital marketing platform that acts as a 24/7 AI-powered marketing and sales assistant for businesses. Spearheaded the frontend and backend engineering while leading a cross-functional technical team that included Machine Learning engineers.",
+      achievements: [
+        "Architected and built the full-stack platform from scratch: React.js frontend and a scalable backend handling automated lead generation, engagement, and appointment booking flows",
+        "Integrated WhatsApp, Facebook, and Instagram communication channels to enable automated lead conversations and follow-ups using AI-driven responses",
+        "Connected Calendly API to enable automatic meeting booking directly from AI-lead interactions, eliminating manual scheduling",
+        "Integrated Twilio for programmatic messaging and Paystack for seamless pay-as-you-go billing and subscription management",
+        "Led the Machine Learning engineering team to build models that identify high-intent prospects from digital marketing campaigns and online lead sources",
+        "Designed the business onboarding flow — from URL ingestion and website analysis to multi-channel connection and campaign launch"
+      ],
+      technologies: ["React", "Node.js", "WhatsApp API", "Facebook API", "Instagram API", "Calendly API", "Twilio", "Paystack", "Machine Learning", "REST API", "PostgreSQL"],
+      type: "Full-time"
+    },
+    {
+      position: "Software Engineering Instructor",
+      company: "AppTech",
+      location: "Lagos, Nigeria",
+      period: "2025",
+      description:
+        "Technology training institute delivering industry-focused software engineering education. Designed and delivered a comprehensive curriculum across core languages, backend frameworks, frontend development, DevOps, and foundational Data Science.",
+      achievements: [
+        "Designed and delivered a comprehensive Software Engineering curriculum covering Java, Python, JavaScript, C, and .NET",
+        "Taught backend development using Spring Boot, Node.js, and Django — guiding students from foundational concepts to real-world server-side applications",
+        "Instructed frontend and mobile development fundamentals including React.js and Flutter, enabling students to build cross-platform interfaces",
+        "Delivered DevOps training covering Git, CI/CD pipelines, Docker containerization, and deployment best practices",
+        "Introduced Data Science fundamentals including Python for data analysis, basic machine learning with scikit-learn, and translating data into business insights",
+        "Designed project-based assessments simulating real engineering workflows, reinforcing students' ability to build and ship full-stack software solutions"
+      ],
+      technologies: ["Java", "Python", "JavaScript", "C", ".NET", "Spring Boot", "Node.js", "Django", "React", "Flutter", "Docker", "Git", "scikit-learn"],
+      type: "Contract"
+    },
+    
+    {
       position: "Founding Backend Engineer (Frontend Collaboration)",
       company: "Akipath Technologies Inc",
       location: "Ontario, Canada",
@@ -34,6 +88,23 @@ const Experience: React.FC = () => {
       technologies: ["REST API", "Cloudinary", "Google Maps", "Payment Gateway", "Java", "Spring Boot"],
       type: "Full-time"
     },
+    {
+      position: "Frontend Engineer",
+      company: "Chekker",
+      location: "Lagos, Nigeria",
+      period: "2024 - 2025",
+      description:
+        "Engineered the frontend for Chekker, a Lagos-based digital health startup connecting patients with medical professionals for at-home lab sample collections. Built seamless user flows for booking home visits, tracking test status, and viewing digital lab and radiology results delivered within 24–72 hours.",
+      achievements: [
+        "Built responsive, accessible booking flows enabling users to schedule at-home medical sample collections with ease",
+        "Developed real-time test status tracking and digital results delivery features, replacing paper-based lab report workflows",
+        "Integrated REST APIs to connect the frontend with backend services handling appointment scheduling and results management",
+        "Collaborated closely with design and product teams to translate healthcare UX requirements into clean, intuitive React components"
+      ],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "REST API", "Figma", "Healthcare APIs"],
+      type: "Full-time"
+    },
+    
     {
       position: "Software Engineer",
       company: "Omnicron Technologies",

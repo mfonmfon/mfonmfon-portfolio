@@ -1,5 +1,4 @@
-import React from "react";
-import { ExternalLink, Github, Star, Eye } from "lucide-react";
+import { ExternalLink, Github, Star, Eye, ChevronRight } from "lucide-react";
 import  QuilifyProjectImages from  '../../assets/projectsimages/Screenshot (703).png'
 import TheCareerCoreImage from '../../assets/projectsimages/thecareercore.png'
 import HomeBookImage from '../../assets/projectsimages/HomeBook.png'
@@ -10,9 +9,34 @@ import FastpingerImage from '../../assets/projectsimages/fastpingerlogo.jpg'
 import AkipathImage from '../../assets/projectsimages/akipath.png'
 import HealthAIImage from '../../assets/projectsimages/health.jpg'
 import WeManageImage from '../../assets/projectsimages/Wemanage logo.png'
+import AdvanceImage from '../../assets/projectsimages/advance.png'
+import ChekkerImage from '../../assets/projectsimages/chekker.png'
+import Alumoni360Image from '../../assets/projectsimages/alumoni360.png'
 
 const Projects: React.FC = () => {
   const projects = [
+    {
+      title: "Advance - Automated Digital Marketing Platform",
+      description:
+        "Led the full-stack development and technical team for Advance — a 24/7 AI-powered marketing and sales assistant. Businesses connect their website, WhatsApp, Facebook, Instagram, Calendly, Twilio, and Paystack. Advance then automatically finds leads, responds to enquiries, follows up with prospects using AI, and books appointments — all without manual effort from the business owner.",
+      image: AdvanceImage,
+      technologies: ["React", "Node.js", "WhatsApp API", "Facebook API", "Calendly API", "Twilio", "Paystack", "Machine Learning", "REST API", "PostgreSQL"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: true,
+      stats: { stars: 210, views: "4.5k" },
+    },
+    {
+      title: "Alumoni360 - Critical Minerals Digital Infrastructure",
+      description:
+        "Built the frontend and backend for Alumoni360 — a unified digital infrastructure platform for the global critical minerals economy. The platform brings compliance, provenance tracking, ESG reporting, and workforce intelligence (Staffline) together in one system, enabling governments, mining operators, manufacturers, and investors to verify sourcing, satisfy regulations, and make decisions backed by trusted, audit-ready data.",
+      image: Alumoni360Image,
+      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "REST API", "Blockchain", "ESG Reporting", "Tailwind CSS"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: true,
+      stats: { stars: 187, views: "3.8k" },
+    },
     {
       title: "Fastpinger - AI-Driven Lead Generation Platform",
       description:
@@ -34,6 +58,17 @@ const Projects: React.FC = () => {
       githubUrl: "#",
       featured: true,
       stats: { stars: 142, views: "2.8k" },
+    },
+    {
+      title: "Chekker - Digital Health & Home Lab Tests",
+      description:
+        "Built the frontend for Chekker, a Lagos-based digital health startup connecting patients with medical professionals for at-home sample collection. The platform enables users to book lab tests, request home visits from phlebotomists, and receive digital lab and radiology results within 24–72 hours — all from their mobile or web browser.",
+      image: ChekkerImage,
+      technologies: ["React", "TypeScript", "Tailwind CSS", "REST API", "Healthcare APIs", "Figma"],
+      liveUrl: "#",
+      githubUrl: "#",
+      featured: true,
+      stats: { stars: 118, views: "2.7k" },
     },
     {
       title: "WeManage - Open Banking App",
@@ -138,13 +173,13 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Featured Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 mb-12">
             {projects
               .filter((project) => project.featured)
               .map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative bg-neutral-900 border border-neutral-800 text-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between"
                 >
                   {/* Image */}
                   <div className="aspect-[16/9] overflow-hidden relative">
@@ -153,17 +188,17 @@ const Projects: React.FC = () => {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
 
                     {/* Project Stats */}
-                    <div className="absolute top-3 right-3 flex space-x-2">
-                      <div className="bg-white/95 rounded-full px-2.5 py-1 flex items-center space-x-1 text-black text-xs font-medium">
-                        <Star className="w-3 h-3" />
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 flex space-x-1 sm:space-x-2">
+                      <div className="bg-black/70 backdrop-blur-md rounded-full px-2 py-0.5 sm:px-2.5 sm:py-1 flex items-center space-x-1 text-white text-[10px] sm:text-xs font-medium">
+                        <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400 fill-amber-400" />
                         <span>{project.stats.stars}</span>
                       </div>
                       {project.stats.views && (
-                        <div className="bg-white/95 rounded-full px-2.5 py-1 flex items-center space-x-1 text-black text-xs font-medium">
-                          <Eye className="w-3 h-3" />
+                        <div className="bg-black/70 backdrop-blur-md rounded-full px-2 py-0.5 sm:px-2.5 sm:py-1 flex items-center space-x-1 text-white text-[10px] sm:text-xs font-medium hidden sm:flex">
+                          <Eye className="w-3 h-3 text-gray-300" />
                           <span>{project.stats.views}</span>
                         </div>
                       )}
@@ -171,45 +206,58 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-sm text-gray-700 mb-4 leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p>
+                  <div className="p-3 sm:p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                      <h3 className="text-xs sm:text-lg font-bold mb-1 sm:mb-2 text-white line-clamp-2 group-hover:text-amber-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-[11px] sm:text-sm text-gray-300 mb-2 sm:mb-4 leading-snug sm:leading-relaxed line-clamp-2 sm:line-clamp-3">
+                        {project.description}
+                      </p>
 
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {project.technologies.slice(0, 4).map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2.5 py-1 border border-gray-300 rounded-lg text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <span className="px-2.5 py-1 border border-gray-300 rounded-lg text-xs font-medium">
-                          +{project.technologies.length - 4}
-                        </span>
-                      )}
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-4">
+                        {project.technologies.slice(0, 3).map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-[9px] sm:text-xs text-gray-300 font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-[9px] sm:text-xs text-gray-300 font-medium">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Buttons */}
-                    <div className="flex space-x-3">
+                    {/* Action Links */}
+                    <div className="flex items-center justify-between pt-2 sm:pt-3 border-t border-neutral-800/80">
                       <a
                         href={project.liveUrl}
-                        className="flex items-center justify-center space-x-2 px-5 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition-all duration-300 text-sm font-medium flex-1"
+                        className="inline-flex items-center text-amber-400 hover:text-amber-300 text-xs sm:text-sm font-semibold transition-colors group/more"
                       >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
+                        <span>More</span>
+                        <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-0.5 group-hover/more:translate-x-1 transition-transform" />
                       </a>
-                      <a
-                        href={project.githubUrl}
-                        className="flex items-center justify-center space-x-2 px-5 py-2.5 border border-gray-300 rounded-lg text-black hover:bg-gray-100 transition-all duration-300 text-sm font-medium flex-1"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>Code</span>
-                      </a>
+                      <div className="flex items-center space-x-1 sm:space-x-2">
+                        <a
+                          href={project.liveUrl}
+                          className="p-1 sm:p-1.5 text-gray-400 hover:text-white rounded-md hover:bg-neutral-800 transition-colors"
+                          title="Live Demo"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          className="p-1 sm:p-1.5 text-gray-400 hover:text-white rounded-md hover:bg-neutral-800 transition-colors"
+                          title="Code"
+                        >
+                          <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -217,13 +265,13 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Other Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             {projects
               .filter((project) => !project.featured)
               .map((project, index) => (
                 <div
                   key={index}
-                  className="group bg-white text-black rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
+                  className="group bg-neutral-900 border border-neutral-800 text-white rounded-xl overflow-hidden shadow hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div className="aspect-video overflow-hidden relative">
                     <img
@@ -231,52 +279,63 @@ const Projects: React.FC = () => {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
 
                     {/* Mini Stats */}
-                    <div className="absolute top-2 right-2 bg-white/95 rounded-full px-2 py-1 flex items-center space-x-1 text-black text-xs">
-                      <Star className="w-3 h-3" />
+                    <div className="absolute top-2 right-2 bg-black/70 backdrop-blur-md rounded-full px-2 py-0.5 flex items-center space-x-1 text-white text-[10px]">
+                      <Star className="w-2.5 h-2.5 text-amber-400 fill-amber-400" />
                       <span>{project.stats.stars}</span>
                     </div>
                   </div>
 
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                    <p className="text-xs text-gray-700 mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
+                  <div className="p-3 sm:p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                      <h3 className="text-xs sm:text-lg font-bold mb-1 sm:mb-2 text-white line-clamp-2">{project.title}</h3>
+                      <p className="text-[11px] sm:text-xs text-gray-300 mb-2 sm:mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {project.technologies.slice(0, 3).map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-0.5 border border-gray-300 text-xs rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-0.5 border border-gray-300 text-xs rounded">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-4">
+                        {project.technologies.slice(0, 3).map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 text-[9px] sm:text-xs text-gray-300 rounded font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-1.5 py-0.5 bg-neutral-800 border border-neutral-700 text-[9px] sm:text-xs text-gray-300 rounded font-medium">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
-                    <div className="flex space-x-2">
+                    <div className="flex items-center justify-between pt-2 border-t border-neutral-800">
                       <a
                         href={project.liveUrl}
-                        className="flex items-center justify-center flex-1 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-all duration-300 text-xs font-medium"
+                        className="inline-flex items-center text-amber-400 hover:text-amber-300 text-xs font-semibold"
                       >
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Demo
+                        <span>More</span>
+                        <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
                       </a>
-                      <a
-                        href={project.githubUrl}
-                        className="flex items-center justify-center flex-1 py-2 border border-gray-300 rounded-lg text-black hover:bg-gray-100 transition-all duration-300 text-xs font-medium"
-                      >
-                        <Github className="w-3 h-3 mr-1" />
-                        Code
-                      </a>
+                      <div className="flex space-x-1">
+                        <a
+                          href={project.liveUrl}
+                          className="p-1 text-gray-400 hover:text-white rounded hover:bg-neutral-800 transition-colors"
+                          title="Demo"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                        <a
+                          href={project.githubUrl}
+                          className="p-1 text-gray-400 hover:text-white rounded hover:bg-neutral-800 transition-colors"
+                          title="Code"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
